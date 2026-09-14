@@ -253,6 +253,7 @@ def project_11_movies():
 
 
 def run_all_projects():
+    project_1_student_performance()
     project_2_employee_salary()
     project_3_sales_performance()
     project_4_attendance()
@@ -281,21 +282,8 @@ PROJECTS = {
 
 
 def main():
-    print("\nNUMPY AND PANDAS MINI PROJECTS")
-    print("1. Student Performance")
-    print("2. Employee Salary")
-    print("3. Sales Performance")
-    print("4. Student Attendance")
-    print("5. Product Sales")
-    print("6. Weather Data")
-    print("7. Bank Transactions")
-    print("8. E-Commerce Customers")
-    print("9. IPL Players")
-    print("10. Hospital Patients")
-    print("11. Movie Ratings")
-    print("0. Run all projects sequentially")
-
-    choice = input("\nEnter project number: ").strip()
+    print("\nProjects 1-11: choose one | 0: run all")
+    choice = input("Project number: ").strip()
     if choice == "0":
         run_all_projects()
     elif choice in PROJECTS:
