@@ -73,9 +73,7 @@ print("\nFinal DataFrame:")
 print(df)
 
 
-# ============================================================
 # PROJECT 2: EMPLOYEE SALARY ANALYSIS
-# ============================================================
 salary = np.array([
     [25000, 2, 80],
     [45000, 5, 90],
@@ -109,9 +107,7 @@ print("Salary standard deviation:", salary_std)
 print(salary_df)
 
 
-# ============================================================
 # PROJECT 3: SALES PERFORMANCE ANALYSIS
-# ============================================================
 sales = np.array([
     [12000, 15000, 18000],
     [10000, 14000, 16000],
@@ -150,10 +146,7 @@ print("Total company sales per month:", company_monthly_sales)
 print("Monthly sales standard deviation:", sales_std)
 print(sales_df)
 
-
-# ============================================================
 # PROJECT 4: STUDENT ATTENDANCE ANALYSIS
-# ============================================================
 attendance = np.array([
     [90, 85, 95, 88],
     [75, 80, 70, 78],
@@ -189,9 +182,8 @@ print("Attendance standard deviation:", attendance_std)
 print(attendance_df)
 
 
-# ============================================================
 # PROJECT 5: PRODUCT SALES ANALYSIS
-# ============================================================
+
 product_sales = np.array([
     [100, 120, 150],
     [80, 100, 130],
@@ -229,9 +221,8 @@ print("Sales standard deviation:", product_std)
 print(product_df.sort_values("Total Sales", ascending=False))
 
 
-# ============================================================
 # PROJECT 6: WEATHER DATA ANALYSIS
-# ============================================================
+
 temperature = np.array([
     [32, 34, 35, 33, 31],
     [28, 30, 31, 29, 27],
@@ -267,9 +258,9 @@ print("Hot or Normal for every temperature:\n", temperature_status)
 print(temperature_df)
 
 
-# ============================================================
+
 # PROJECT 7: BANK TRANSACTION ANALYSIS
-# ============================================================
+
 transactions = np.array([
     [5000, 2000, 3000],
     [8000, 1500, 4000],
@@ -305,9 +296,9 @@ print("Deposit standard deviation:", np.std(transactions[:, 0]))
 print(transaction_df)
 
 
-# ============================================================
+
 # PROJECT 8: E-COMMERCE CUSTOMER ANALYSIS
-# ============================================================
+
 customers = np.array([
     [25, 5, 12000],
     [32, 8, 25000],
@@ -344,9 +335,8 @@ print("Top three customers:")
 print(customer_df.sort_values("Total Spending", ascending=False).head(3))
 
 
-# ============================================================
 # PROJECT 9: IPL PLAYER PERFORMANCE ANALYSIS
-# ============================================================
+
 players = np.array([
     [450, 15, 12],
     [520, 18, 15],
@@ -379,9 +369,8 @@ print("Runs standard deviation:", np.std(runs))
 print(player_df)
 
 
-# ============================================================
 # PROJECT 10: HOSPITAL PATIENT ANALYSIS
-# ============================================================
+
 patients = np.array([
     [25, 120, 80, 72],
     [45, 150, 95, 88],
@@ -409,9 +398,8 @@ print("Standard deviation of each column:", np.std(patients, axis=0))
 print(patient_df)
 
 
-# ============================================================
 # PROJECT 11: MOVIE RATING ANALYSIS
-# ============================================================
+
 ratings = np.array([
     [8.5, 120000],
     [7.8, 95000],
