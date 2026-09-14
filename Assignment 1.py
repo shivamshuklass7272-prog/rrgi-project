@@ -282,14 +282,7 @@ PROJECTS = {
 
 
 def main():
-    print("\nProjects 1-11: choose one | 0: run all")
-    choice = input("Project number: ").strip()
-    if choice == "0":
-        run_all_projects()
-    elif choice in PROJECTS:
-        PROJECTS[choice]()
-    else:
-        print("Invalid project number.")
+    run_all_projects()
 
 
 if __name__ == "__main__":
