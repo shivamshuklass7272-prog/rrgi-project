@@ -1,74 +1,31 @@
 import numpy as np
 import pandas as pd
 
-# Marks of 5 students
-marks = np.array([
-    [85, 80, 90],
-    [70, 75, 65],
-    [92, 88, 95],
-    [60, 72, 68],
-    [78, 82, 80]
-])
-
-print("Marks:")
-print(marks)
-
-
-total = np.sum(marks, axis=1)
-print("\nTotal marks:")
-print(total)
-
-
-average = np.mean(marks, axis=1)
-print("\nAverage marks:")
-print(average)
-
-
-subject_average = np.mean(marks, axis=0)
-print("\nAverage marks in each subject:")
-print(subject_average)
-
-
-highest = np.max(marks, axis=0)
-print("\nHighest score in each subject:")
-print(highest)
-
-
-lowest = np.min(marks, axis=0)
-print("\nLowest score in each subject:")
-print(lowest)
-
-
-students = np.where(average > 80)
-print("\nStudents with average above 80:")
-print(students)
-
-
-status = np.where(average >= 40, "Pass", "Fail")
-print("\nPass/Fail status:")
-print(status)
-
-
-highest_student = np.argmax(average)
-print("\nIndex of highest-performing student:")
-print(highest_student)
-
-standard_deviation = np.std(marks, axis=0)
-print("\nStandard deviation of each subject:")
-print(standard_deviation)
-
-
-df = pd.DataFrame({
-    "Python": marks[:, 0],
-    "SQL": marks[:, 1],
-    "Machine Learning": marks[:, 2],
-    "Total": total,
-    "Average": average,
-    "Status": status
-})
-
-print("\nFinal DataFrame:")
-print(df)
+def project_1_student_performance():
+    marks = np.array([
+        [85, 80, 90], [70, 75, 65], [92, 88, 95],
+        [60, 72, 68], [78, 82, 80]
+    ])
+    total = np.sum(marks, axis=1)
+    average = np.mean(marks, axis=1)
+    status = np.where(average >= 40, "Pass", "Fail")
+    result = pd.DataFrame({
+        "Python": marks[:, 0], "SQL": marks[:, 1],
+        "Machine Learning": marks[:, 2], "Total": total,
+        "Average": average, "Status": status
+    })
+    print("\nPROJECT 1: STUDENT PERFORMANCE ANALYSIS")
+    print("Marks:\n", marks)
+    print("Total marks:", total)
+    print("Average marks:", average)
+    print("Average per subject:", np.mean(marks, axis=0))
+    print("Highest per subject:", np.max(marks, axis=0))
+    print("Lowest per subject:", np.min(marks, axis=0))
+    print("Students above average 80:", np.where(average > 80)[0])
+    print("Highest-performing student index:", np.argmax(average))
+    print("Standard deviation per subject:", np.std(marks, axis=0))
+    print(result)
+    return result
 
 
 def project_2_employee_salary():
@@ -295,13 +252,57 @@ def project_11_movies():
     print(result.sort_values("Rating", ascending=False))
 
 
-project_2_employee_salary()
-project_3_sales_performance()
-project_4_attendance()
-project_5_product_sales()
-project_6_weather()
-project_7_bank_transactions()
-project_8_ecommerce()
-project_9_ipl()
-project_10_hospital()
-project_11_movies()
+def run_all_projects():
+    project_2_employee_salary()
+    project_3_sales_performance()
+    project_4_attendance()
+    project_5_product_sales()
+    project_6_weather()
+    project_7_bank_transactions()
+    project_8_ecommerce()
+    project_9_ipl()
+    project_10_hospital()
+    project_11_movies()
+
+
+PROJECTS = {
+    "1": project_1_student_performance,
+    "2": project_2_employee_salary,
+    "3": project_3_sales_performance,
+    "4": project_4_attendance,
+    "5": project_5_product_sales,
+    "6": project_6_weather,
+    "7": project_7_bank_transactions,
+    "8": project_8_ecommerce,
+    "9": project_9_ipl,
+    "10": project_10_hospital,
+    "11": project_11_movies,
+}
+
+
+def main():
+    print("\nNUMPY AND PANDAS MINI PROJECTS")
+    print("1. Student Performance")
+    print("2. Employee Salary")
+    print("3. Sales Performance")
+    print("4. Student Attendance")
+    print("5. Product Sales")
+    print("6. Weather Data")
+    print("7. Bank Transactions")
+    print("8. E-Commerce Customers")
+    print("9. IPL Players")
+    print("10. Hospital Patients")
+    print("11. Movie Ratings")
+    print("0. Run all projects sequentially")
+
+    choice = input("\nEnter project number: ").strip()
+    if choice == "0":
+        run_all_projects()
+    elif choice in PROJECTS:
+        PROJECTS[choice]()
+    else:
+        print("Invalid project number.")
+
+
+if __name__ == "__main__":
+    main()
