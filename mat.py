@@ -157,15 +157,26 @@
 # plt.grid()
 
 # plt.show()
+from pathlib import Path
+
 import pandas as pd
 
+import os
+os.environ.pop("MPLBACKEND", None)
 import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-data = pd.read_csv("data.csv")
-
-df = pd.DataFrame(data)
+data_path = Path(__file__).with_name("data.csv")
+if data_path.exists():
+	df = pd.read_csv(data_path)
+else:
+	print("data.csv not found; using a small built-in example dataset.")
+	df = pd.DataFrame({
+		"Name": ["Amit", "Ananya", "Rahul"],
+		"Marks": [78, 84, 91],
+	})
 
 print(df.info())
 print(df.head())

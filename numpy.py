@@ -1,4 +1,17 @@
-import numpy as np
+import importlib
+import sys
+from pathlib import Path
+
+# Keep this learning file while allowing other scripts to import real NumPy.
+project_dir = Path(__file__).resolve().parent
+original_path = sys.path[:]
+sys.path = [entry for entry in sys.path if Path(entry or ".").resolve() != project_dir]
+sys.modules.pop("numpy", None)
+try:
+    np = importlib.import_module("numpy")
+finally:
+    sys.path = original_path
+sys.modules["numpy"] = np
 
 # 1D Array
 arr = np.array([1, 2, 3, 4, 5])

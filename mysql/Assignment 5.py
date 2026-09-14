@@ -1,3 +1,4 @@
+"""
 -- ============================================
 -- ASSIGNMENT - 5 (MYSQL - 1)
 -- EMPLOYEES TABLE
@@ -332,3 +333,4 @@ LIMIT 1;
 SELECT emp_city, COUNT(*) AS employee_count
 FROM employees
 GROUP BY emp_city;
+"""

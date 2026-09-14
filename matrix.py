@@ -1,4 +1,3 @@
-import pandas as pd
 import numpy as np
 
 m2 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
@@ -14,7 +13,6 @@ print()
 mt2 = m2.T
 print(mt2)
 
-#sum of all element present in matrix
 import numpy as np
 
 matrix1 = np.array([[100, 200], [300, 400]])
@@ -30,24 +28,23 @@ print(matrix3+2)
 #twice all element of matrix1
 print(matrix1*2)
 
-#create a 3D array and traverse it.
+# Create a 3D array and traverse it.
 m3 = np.array([[[1,2],[3,4],[5,6]]])
 print(m3)
 for i in np.nditer(m3):
-   print(i,end="")
-   print()
-   a=3
-   b=5
-   c= np.bitwise_and(a,b)
-   print("bitwise_and of a &  is ",c)
+    print(i, end=" ")
 
-   marks={
-       [
-           [80,70,90]
-           [85,95,80]
-           [90,85,85]
-       ]
-   }
+a = 3
+b = 5
+print("\nBitwise AND of a and b is", np.bitwise_and(a, b))
+
+marks = np.array([
+    [80, 70, 90],
+    [85, 95, 80],
+    [90, 85, 85],
+])
+print("Average marks:", np.mean(marks, axis=0))
+print("Maximum marks:", np.max(marks, axis=0))
 #python ,java ,sql
 #avrage of marks in python
 #maximum marks in sql

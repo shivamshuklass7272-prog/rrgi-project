@@ -1,3 +1,4 @@
+"""
 -- =========================================================
 -- BANKING MYSQL PROJECT
 -- 28 SQL QUERIES
@@ -348,3 +349,4 @@ JOIN accounts a
     ON c.customer_id = a.customer_id
 JOIN transactions t
     ON a.account_id = t.account_id;
+"""

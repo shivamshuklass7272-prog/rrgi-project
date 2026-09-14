@@ -1,3 +1,5 @@
+import os
+os.environ.pop("MPLBACKEND", None)
 import matplotlib
 matplotlib.use("Agg")
 
@@ -15,11 +17,19 @@ dataset_candidates = [
 dataset_path = next((path for path in dataset_candidates if path.exists()), None)
 
 if dataset_path is None:
-    raise FileNotFoundError(
-        f"Could not find {dataset_name}. Place it beside Assignment_2.py."
-    )
+    print(f"{dataset_name} not found; using a small built-in example dataset.")
+    df = pd.DataFrame({
+        "District": ["Lucknow", "Kanpur", "Agra"],
+        "No of Schools - Total": [120, 95, 110],
+        "No of Students - Total": [24000, 18000, 22000],
+        "No of Students - Boys": [12500, 9200, 11200],
+        "No of Students - Girls": [11500, 8800, 10800],
+        "PASS PERCENTAGE IN CLASS X - (Before Compt.) - 2023-24": [88.5, 91.0, 86.0],
+        "PASS PERCENTAGE IN CLASS XII - (Before Compt.) - 2023-24": [84.0, 89.0, 82.5],
+    })
+else:
+    df = pd.read_csv(dataset_path)
 
-df = pd.read_csv(dataset_path)
 df.columns = df.columns.str.replace(r"\s+", " ", regex=True).str.strip()
 
 df.info()

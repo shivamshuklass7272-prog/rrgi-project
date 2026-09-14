@@ -1,0 +1,20 @@
+import numpy as np
+
+
+arr = np.array([1, 2, 3, 4, 5])
+print("1D array:", arr)
+
+arr3 = np.array([
+    [[1, 2, 3], [4, 5, 6]],
+    [[7, 8, 9], [10, 11, 12]],
+])
+
+print("3D array:")
+print(arr3)
+print("Dimensions:", arr3.ndim)
+
+print("Elements:")
+for value in np.nditer(arr3):
+    print(value, end=" ")
+
+print("\nSum:", np.sum(arr3))
